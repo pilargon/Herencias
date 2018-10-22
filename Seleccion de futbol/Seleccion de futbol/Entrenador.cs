@@ -9,13 +9,16 @@ namespace Seleccion_de_futbol
     class Entrenador:SeleccionDeFutbol
     {
         private int idFederacion;
+        private bool dirigirEntrenamiento;
+        private bool viajar;
+        private bool dirigirPartido;
 
         public Entrenador()
         {
 
         }
-        public Entrenador(int id, string nombre, string apellidos, int edad,int contador,int idFederacion)
-            : base(id, nombre, apellidos, edad,contador)
+        public Entrenador(int id, string nombre, string apellidos, int edad,int idFederacion)
+            : base(id, nombre, apellidos, edad)
         {
             this.idFederacion = idFederacion;
         }
@@ -26,20 +29,19 @@ namespace Seleccion_de_futbol
         }
 
         public bool DirigirPartido()
-        {
-            if(DirigirEntrenamiento()==true)
-            {
-                Console.WriteLine("El entrenador va a dirigir el Partido");
-            }
-            return true;
+        {            
+            Console.WriteLine("El entrenador va a dirigir el Partido");
+            return dirigirPartido=true;
         }
         public bool DirigirEntrenamiento()
         {
-            if (Viajar() == true)
-            {
-                Console.WriteLine("El entrenador va a dirigir el Entrenamiento");
-            }
-            return true;
+            Console.WriteLine("El entrenador va a dirigir el entrenamiento");
+            return dirigirEntrenamiento = true;
+        }
+        public bool Viajar()
+        {
+            Console.WriteLine("El entrenador va a viajar");
+            return viajar = true;
         }
     }
 }

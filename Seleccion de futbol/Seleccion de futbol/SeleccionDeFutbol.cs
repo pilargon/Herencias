@@ -12,18 +12,18 @@ namespace Seleccion_de_futbol
         private string nombre;
         private string apellidos;
         private int edad;
-        private int contador;
+        static int contador=0;
         private bool viajar=false;
         private bool concentrarse=false;
         //2.-Añade un contador  a la clase padre que contabilice el número total de integrantes de la selección.
 
-        public SeleccionDeFutbol(int id, string nombre, string apellidos, int edad, int contador)
+        public SeleccionDeFutbol(int id, string nombre, string apellidos, int edad)
         {
             this.id = id;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.edad = edad;
-            this.contador++;
+            contador++;
         }
         public SeleccionDeFutbol()
         {
@@ -81,11 +81,7 @@ namespace Seleccion_de_futbol
         {
             this.edad = edad;
         }
-        public void SetContador(int contador)
-        {
-            this.contador=contador;
-        }
-
+ 
         public bool Concentrarse()
         {
             return concentrarse=true;
@@ -94,15 +90,14 @@ namespace Seleccion_de_futbol
         {
             return viajar=true;
         }
-
         public int Contador()
         {
-            contador++;
             return contador;
         }
+       
         public string MostrarDatos()
         {
-            return "********************\nId: " + id + "\nNombre: " + nombre + "\nApellidos: " + apellidos + "\nEdad: " + edad + "\nContador: " + contador;
+            return "********************\nId: " + id + "\nNombre: " + nombre + "\nApellidos: " + apellidos + "\nEdad: " + edad ;
         }
     }
 
