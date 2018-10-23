@@ -101,9 +101,6 @@ namespace Seleccion_de_futbol
         }
         
 
-
-
-
     }
 
 
