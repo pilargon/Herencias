@@ -41,7 +41,7 @@ namespace Seleccion_de_futbol
             return viajar = true;
         }
 
-        public string MostrarDatosFutbolista()
+        public override string MostrarDatos()
         {
             return base.MostrarDatos() + "\nDorsal: " + dorsal + "\nDemarcacion: " + demarcacion+"\n";
         }

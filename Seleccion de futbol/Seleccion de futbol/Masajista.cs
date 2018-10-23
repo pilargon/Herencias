@@ -29,7 +29,7 @@ namespace Seleccion_de_futbol
             return darMasaje=true;
         }
 
-        public string MostrarDatosMasajista()
+        public override string MostrarDatos()
         { 
             return base.MostrarDatos() + "\nTitulacion: "+titulacion +"\nExperiencia: "+aniosExperiencia;
         }

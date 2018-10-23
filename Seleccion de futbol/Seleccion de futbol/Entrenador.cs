@@ -23,7 +23,7 @@ namespace Seleccion_de_futbol
             this.idFederacion = idFederacion;
         }
 
-        public string MostrarDatosEntrenador()
+        public override string MostrarDatos()
         {
             return base.MostrarDatos() + "\nId Federacion: "+idFederacion;
         }

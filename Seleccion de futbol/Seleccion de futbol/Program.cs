@@ -12,7 +12,7 @@ namespace Seleccion_de_futbol
         {
             //3.-Realiza una estructura de datos para almacenar a los miembros de una selección de futbol. 
             //Añade un entrenador, dos masajistas y 4 futbolistas. Mostrar los datos de todos los integrantes.
-            //SeleccionDeFutbol s1 = new SeleccionDeFutbol();//he tenido que comentar porque suma 1 al contador.
+            /*SeleccionDeFutbol s1 = new SeleccionDeFutbol();*///he tenido que comentar porque suma 1 al contador.
             Entrenador e1 = new Entrenador(1, "Paco", "Peluca", 55, 123);
             Masajista m1 = new Masajista(2, "Pinky", "Winky", 43, 1, "Grado en Masajista");
             Masajista m2 = new Masajista(3, "Pan", "Chocolate", 25, 10, "Fp Masajes");
@@ -34,14 +34,14 @@ namespace Seleccion_de_futbol
             listaEntrenador.Add(e1);
             foreach (Entrenador e in listaEntrenador)
             {
-                Console.WriteLine(e.MostrarDatosEntrenador());
+                Console.WriteLine(e.MostrarDatos());
             }
             List<Masajista> listaMasajista = new List<Masajista>();
             listaMasajista.Add(m1);
             listaMasajista.Add(m2);
             foreach (Masajista e in listaMasajista)
             {
-                Console.WriteLine(e.MostrarDatosMasajista());
+                Console.WriteLine(e.MostrarDatos());
             }
             List<Futbolista> listaFutbolista = new List<Futbolista>();
             listaFutbolista.Add(f1);
@@ -50,7 +50,7 @@ namespace Seleccion_de_futbol
             listaFutbolista.Add(f4);
             foreach (Futbolista e in listaFutbolista)
             {
-                Console.WriteLine(e.MostrarDatosFutbolista());
+                Console.WriteLine(e.MostrarDatos());
             }
 
             foreach (Futbolista futbolista in listaFutbolista)
@@ -75,37 +75,47 @@ namespace Seleccion_de_futbol
             Console.WriteLine("El numero de integrantes es :" + e1.Contador());
 
 
-
-
             List<SeleccionDeFutbol> list1 = new List<SeleccionDeFutbol>()
             {
                 e1,m1,m2,f1,f2,f3,f4
             };
 
-            SeleccionPais g1 = new SeleccionPais("Japon", list1);
-            SeleccionPais g2 = new SeleccionPais("Japon");
+            SeleccionPais g1 = new SeleccionPais();
+            SeleccionPais g2 = new SeleccionPais();
 
-           
-                g2.AñadirParticipantes(e1);
-                g2.AñadirParticipantes(m1);
-                g2.AñadirParticipantes(m2);
-                g2.AñadirParticipantes(f1);
-                g2.AñadirParticipantes(f2);
-                g2.AñadirParticipantes(f3);
-                g2.AñadirParticipantes(f4);
-            
-            foreach (SeleccionDeFutbol participante in g1.GetGaraje())
+
+            g2.AñadirParticipantes(e1);
+            g2.AñadirParticipantes(m1);
+            g2.AñadirParticipantes(m2);
+            g2.AñadirParticipantes(f1);
+            g2.AñadirParticipantes(f2);
+            g2.AñadirParticipantes(f3);
+            g2.AñadirParticipantes(f4);
+
+
+            g2.AñadirIntegrante(e1);
+            g2.AñadirIntegrante(m1);
+            g2.AñadirIntegrante(m2);
+            g2.AñadirIntegrante(f1);
+            g2.AñadirIntegrante(f2);
+            g2.AñadirIntegrante(f3);
+            g2.AñadirIntegrante(f4);
+
+            g2.BajaSeleccion(e1);
+            g2.MostrarDatosSeleccion();
+            foreach (SeleccionDeFutbol participante in g1.GetSeleccionPais())
             {
-                Console.WriteLine(coche.GetType().Name.ToUpper());
-                Console.WriteLine(coche.ToString());
+                Console.WriteLine(g2.GetType().Name.ToUpper());
+                Console.WriteLine(g2.ToString());
                 Console.WriteLine("**************************");
             }
 
-            Console.WriteLine("Número de Vehículos: " + g1.GetGaraje().Count);
-
+            Console.WriteLine("Número de integrantes: " + g2.GetSeleccionPais().Count);
 
             Console.ReadLine();
         }
+
+        
         public static string MostrarDatos(int id, string nombre, string apellidos, int edad)
         {
             return ("Id: " + id + "\nNombre: " + nombre + "\nApellidos: " + apellidos + "\nEdad: " + edad);

@@ -95,10 +95,15 @@ namespace Seleccion_de_futbol
             return contador;
         }
        
-        public string MostrarDatos()
+        public virtual string MostrarDatos()
         {
             return "********************\nId: " + id + "\nNombre: " + nombre + "\nApellidos: " + apellidos + "\nEdad: " + edad ;
         }
+        
+
+
+
+
     }
 
 
